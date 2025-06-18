@@ -127,7 +127,7 @@ SummarizeGrowthByPlate <- function(plate,
                      stringsAsFactors = FALSE)
 
   if (plot_fit == TRUE) {
-    grDevices::cairo_pdf(plot_file, width = 12, height = 8)
+    grDevices::pdf(plot_file, width = 12, height = 8) # Replace cairo_pdf with pdf
     old_par <- graphics::par(mfcol = c(8, 12), mar = c(0.25, 0.25, 0.25, 0.25))
     idx_to_plot <- length(plate$time) * 1:20 / 20
     y_lim_max <- max(plate[,setdiff(names(plate), "time")]) -
@@ -188,6 +188,7 @@ SummarizeGrowthByPlate <- function(plate,
 
   if (plot_fit == TRUE) {
     grDevices::dev.off()
+    graphics::par(old_par)  # Restore original graphics parameters
   }
 
   return(d_gc)
