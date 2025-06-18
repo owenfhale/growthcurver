@@ -2,6 +2,12 @@
 
 This helpful package by [Kathleen Sprouffske](https://github.com/sprouffske/growthcurver) relies on the Cairo graphics library, which doesn't work for me.
 All I've done is change the graphics device for the plotting part of the `SummarizeGrowthByPlate` function.
+If you use this, don't forget to cite the [paper describing the original package](https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-016-1016-7)!
+
+To install this version, run the following code in R:
+```R
+devtools::install_github("owenfhale/growthcurver")
+```
 
 # growthcurver:
 
